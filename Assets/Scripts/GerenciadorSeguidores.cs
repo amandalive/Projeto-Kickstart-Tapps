@@ -87,7 +87,6 @@ public class GerenciadorSeguidores : MonoBehaviour
 
     void GameOver()
     {
-        Time.timeScale = 0f;
-        Debug.Log("Game Over!");
+        GameOverManager.Instancia.TriggerGameOver();
     }
 }
