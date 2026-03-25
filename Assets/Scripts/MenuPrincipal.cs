@@ -15,4 +15,9 @@ public class MenuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene("Configuracoes");
     }
+
+    public void botaoLoja()
+    {
+        SceneManager.LoadScene("Loja");
+    }
 }
