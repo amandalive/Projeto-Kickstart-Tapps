@@ -8,6 +8,16 @@ public class Moeda : MonoBehaviour
    
    public TipoMoeda tipo = TipoMoeda.Dourada;
 
+
+   void Start()
+    {
+        Vector3 posicaoNova = transform.position;
+
+        posicaoNova.z = 0;
+
+        transform.position = posicaoNova;
+    }
+
    void OnTriggerEnter2D(Collider2D outro)
     {
         if (outro.CompareTag("Jogador"))
