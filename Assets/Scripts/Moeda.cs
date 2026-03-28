@@ -10,26 +10,24 @@ public class Moeda : MonoBehaviour
 
 
    void Start()
-    {
-        Vector3 posicaoNova = transform.position;
+   {
+       Vector3 posicaoNova = transform.position;
 
-        posicaoNova.z = 0;
+       posicaoNova.z = 0;
 
-        transform.position = posicaoNova;
-    }
+       transform.position = posicaoNova;
+   }
 
    void OnTriggerEnter2D(Collider2D outro)
-    {
-        if (outro.CompareTag("Jogador"))
-        {
-            GerenciadorMoedas.Instancia.AdicionarMoeda(tipo);
+   {
+       if (outro.CompareTag("Jogador"))
+       {
+           GerenciadorMoedas.ObterInstancia().AdicionarMoeda(tipo);
 
-            if (tipo == TipoMoeda.Seguidor)
-            {
-                GerenciadorSeguidores.Instancia.AdicionarSeguidor();
-            }
+           if (tipo == TipoMoeda.Seguidor && GerenciadorSeguidores.Instancia != null)
+               GerenciadorSeguidores.Instancia.AdicionarSeguidor();
 
-            Destroy(gameObject);
-        }
-    }
+           Destroy(gameObject);
+       }
+   }
 }

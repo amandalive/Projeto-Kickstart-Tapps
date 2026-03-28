@@ -34,10 +34,20 @@ public class GerenciadorMoedas : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instancia = this;
         DontDestroyOnLoad(gameObject);
         CarregarDados();
+    }
+
+    // Garante que o GerenciadorMoedas sempre existe, em qualquer cena
+    public static GerenciadorMoedas ObterInstancia()
+    {
+        if (Instancia == null)
+        {
+            GameObject go = new GameObject("GerenciadorMoedas");
+            Instancia = go.AddComponent<GerenciadorMoedas>();
+        }
+        return Instancia;
     }
 
     public void AdicionarMoeda (Moeda.TipoMoeda tipo)
@@ -85,9 +95,9 @@ public class GerenciadorMoedas : MonoBehaviour
 
     void SalvarDados()
     {
-        PlayerPrefs.GetInt("moedas_total", MoedasTotal);
-        PlayerPrefs.GetInt("seguidores_total", SeguidoresTotal);
-        PlayerPrefs.GetInt("melhor_pontuacao", MelhorPontuacao);
+        PlayerPrefs.SetInt("moedas_total", MoedasTotal);
+        PlayerPrefs.SetInt("seguidores_total", SeguidoresTotal);
+        PlayerPrefs.SetInt("melhor_pontuacao", MelhorPontuacao);
         PlayerPrefs.Save();
     }
 

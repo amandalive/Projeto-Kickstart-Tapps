@@ -18,6 +18,8 @@ public class MovJogador : MonoBehaviour
     public float contadorDeTempoDoPulo;
     private bool pulando;
 
+    [SerializeField] private Animator animacao;
+
     private bool deveIniciarPulo = false;
 
     // Update is called once per frame
@@ -31,12 +33,14 @@ public class MovJogador : MonoBehaviour
             deveIniciarPulo = true; //inicia o pulo
             pulando = true;  //impede que o jogador dê pulos duplos, triplos, etc.
             contadorDeTempoDoPulo = tempoPulo;  // seta o cronometro do tempo máximo de subida para que segurar o botão de pulo não faça o jogador subir infinitamente
+            animacao.SetBool("pulando", true);
         }
 
         if (Input.GetButtonUp("Jump"))
         {
 
-            pulando = false;  
+            pulando = false;
+            animacao.SetBool("pulando", false);
         }
 
     }
