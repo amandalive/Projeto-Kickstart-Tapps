@@ -9,81 +9,100 @@ public class SpawnMoeda : MonoBehaviour
     public GameObject prefabLike;
     public GameObject prefabSeguidor;
 
-    [Header("Quantidade")]
-    public int minMoedas = 2;
-    public int maxMoedas = 5;
+    [Header("Trilhas de Moedas")]
+    public Trilha[] trilhas;
 
-    [Header("Probabilidade(O a 100)")]
-    [Range(0, 100)] public int chanceDourada = 75;
-    [Range(0, 100)] public int chanceLike = 25;
-    [Range(0, 100)] public int chanceSeguidor = 5;
-
-    [Header ("Area de Spawn")]
-    public Vector2 areaMin = new Vector2 (0f, 1f);
-    public Vector2 areaMax = new Vector2 (18f, 3f);
+    [Header("Probabilidade de spawnar cada trilha (O a 100)")]
+    [Range(0, 100)] public int chanceTrilha = 80;
 
     void OnEnable()
     {
-        //limpa as moedas do ciclo anterior
-        foreach (Transform filho in transform)
-        {
-            if (filho.GetComponent<Moeda>() != null) Destroy(filho.gameObject);
-        }
-
-        SpawnarMoedas();
+        LimparMoedas();
+        SpawnarTrilhas();
     }
 
-    void SpawnarMoedas()
+    void LimparMoedas()
     {
-        int total = Random.Range(minMoedas, maxMoedas + 1);
-
-        for (int i = 0; i < total; i++)
-        {
-
-            GameObject prefab = EscolherPrefab();
-            if (prefab == null) continue;
-
-            Vector2 pos = new Vector2(
-                    transform.position.x + Random.Range(areaMin.x, areaMax.x),
-                    transform.position.y + Random.Range(areaMin.y, areaMax.y)
-                );
-
-            GameObject moeda = Instantiate(prefab, pos, Quaternion.identity);
-            moeda.transform.SetParent(transform);
-        }
-    
+        foreach(Transform filho in transform)
+            if(filho.GetComponent<Moeda>() != null) Destroy(filho.gameObject);
     }
 
-    GameObject EscolherPrefab()
+    void SpawnarTrilhas()
     {
-        //pra manter as chances somadas sempre 100
-        int total = chanceDourada + chanceLike + chanceSeguidor;
-        if (total == 0) return null;
+        foreach(Trilha trilha in trilhas)
+        {
+            if (Random.Range(0, 100) > chanceTrilha) continue;
 
-        int sorteio = Random.Range(0, total);
+            foreach (PontoMoeda ponto in trilha.pontos)
+            {
+                GameObject prefab = EscolherPrefab(ponto.tipo);
+                if (prefab == null) continue;
 
-        if (sorteio < chanceDourada) return prefabDourada;
-        if (sorteio < chanceDourada + chanceLike) return prefabLike;
-        return prefabSeguidor;
+                Vector3 pos = new Vector3(
+                    transform.position.x + ponto.posicaoX, ponto.posicaoY, 0f);
+
+                GameObject moeda = Instantiate (prefab, pos, Quaternion.identity);
+                moeda.transform.SetParent(transform);
+            }
+        }
+    }
+
+    GameObject EscolherPrefab(Moeda.TipoMoeda tipo)
+    {
+        switch (tipo)
+        {
+            case Moeda.TipoMoeda.Dourada: return prefabDourada;
+            case Moeda.TipoMoeda.Like : return prefabLike;
+            case Moeda.TipoMoeda.Seguidor: return prefabSeguidor;
+            default: return prefabDourada;
+        }
     }
 
 
     //facilita ajustes  da area de spawn
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
-        Vector3 centro = new Vector3(
-                transform.position.x + (areaMin.x + areaMax.x) / 2f,
-                transform.position.y + (areaMin.y + areaMax.y) / 2f, 
-                0f
-            );
-        Vector3 tamanho = new Vector3(
-                areaMax.x - areaMin.x,
-                areaMax.y - areaMin.y,
-                0f
-            );
+        if (trilhas == null) return;
 
-        Gizmos.DrawWireCube(centro, tamanho);
+        Color[] cores = { Color.yellow, Color.cyan, Color.green };
+
+        for (int t = 0; t < trilhas.Length; t++)
+        {
+            Gizmos.color = cores[t % cores.Length];
+
+            foreach(PontoMoeda ponto in trilhas[t].pontos)
+            {
+                Vector3 pos = new Vector3(
+                    transform.position.x + ponto.posicaoX, ponto.posicaoY, 0f);
+
+                Gizmos.DrawSphere(pos, 0.3f);
+            }
+
+            for (int i = 0; i < trilhas[t].pontos.Length - 1; i++)
+            {
+                Vector3 a = new Vector3(
+                    transform.position.x + trilhas[t].pontos[i].posicaoX,
+                    trilhas[t].pontos[i].posicaoY, 0f);
+                Vector3 b = new Vector3(
+                    transform.position.x + trilhas[t].pontos[i + 1].posicaoX,
+                    trilhas[t].pontos[i + 1].posicaoY, 0f);
+                Gizmos.DrawLine(a, b);
+            }
+        }
     }
+}
 
+[System.Serializable]
+public class Trilha
+{
+    public string nome;
+    public PontoMoeda[] pontos;
+}
+
+[System.Serializable]
+public class PontoMoeda
+{
+    public float posicaoX;
+    public float posicaoY;
+    public Moeda.TipoMoeda tipo = Moeda.TipoMoeda.Dourada;
 }

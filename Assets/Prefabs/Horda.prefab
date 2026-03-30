@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5908381651864398226}
   - component: {fileID: 5349237636494108860}
   - component: {fileID: 5906118000882188306}
+  - component: {fileID: -2881861155854184419}
   m_Layer: 0
   m_Name: Horda
   m_TagString: Untagged
@@ -29,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7073474, y: 5.764461, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5.050035, z: 0.8760637}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0.8248067, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3eed19ce09185b3448a3eb0ea000d848, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118,9 +119,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 4.5, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 1.095323
 --- !u!114 &5906118000882188306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,10 +136,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jogador: {fileID: 5879455752519044485, guid: 1b51b99c1326c3d4589ea87aad66ca77, type: 3}
   spriteRenderer: {fileID: 5908381651864398226}
-  spritePequeno: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  spriteMedio: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  spriteGrande: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  spritePequeno: {fileID: 21300000, guid: 3eed19ce09185b3448a3eb0ea000d848, type: 3}
+  spriteMedio: {fileID: 21300000, guid: f2439c866831d554d9f61f47fa5a187f, type: 3}
+  spriteGrande: {fileID: 21300000, guid: ee0389809cb7fe348a4708079b65d841, type: 3}
   distanciaInicial: 10
   velocidadeNormal: 4
   velocidadeImpulso: 8
   duracaoImpulso: 1.5
+--- !u!95 &-2881861155854184419
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2747624260612088210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8243bc55367203c4ca5fda3f458b6e60, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

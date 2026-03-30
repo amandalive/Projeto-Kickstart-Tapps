@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: d68da463ef291034ea7bbfa3f61b2666
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_0"
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1571
+        width: 329
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2555a7ed48b1abc4c88af4340bea1394
+      internalID: -1385086686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_3"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1032
+        width: 209
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdad4977986e8541bda7788c8ddce37
+      internalID: -2097928635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_4"
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 1036
+        width: 214
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744f6d43ff97b0148a7448819ab8e6ac
+      internalID: -1960819803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_5"
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1037
+        width: 185
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d730b0baa540cdb47b92520f5f9ba665
+      internalID: 2079771813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_6"
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 1037
+        width: 192
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0769d10f463934fbee896dfeb5fc59
+      internalID: 1033281935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_7"
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 542
+        width: 191
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda01eac614e3a146bb0747d073eef91
+      internalID: -1198852834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_8"
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 603
+        width: 233
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4643fb64fa338479bae850a556b245
+      internalID: -1442812634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_9"
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 577
+        width: 217
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c168660768c18b4b9d45aaf86bb3c87
+      internalID: -546579307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_10"
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 544
+        width: 207
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333e4b743488ca242a6dbfc8f4086250
+      internalID: 631794401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_11"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 69
+        width: 204
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a7fd1fe12f79e478a2a62f57f35a0b
+      internalID: -696461637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_12"
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 65
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedf52c078d60694cbde508972a0346e
+      internalID: -1419851837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_13"
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 99
+        width: 218
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1229c2c6054c54cbcff77dc8d303f8
+      internalID: -148118878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_14"
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 71
+        width: 202
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945a5a2e89b93324aaac773d5b00f1ef
+      internalID: 775712690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_15"
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 71
+        width: 192
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf77a4f292f4b449812405b67af7b22
+      internalID: -90049988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_16"
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 99
+        width: 217
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bcbd6a57f5ee86428f376929efd46a1
+      internalID: -908641005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_0": -1385086686
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_1": 1342799239
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_10": 631794401
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_11": -696461637
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_12": -1419851837
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_13": -148118878
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_14": 775712690
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_15": -90049988
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_16": -908641005
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_2": 854191598
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_3": -2097928635
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_4": -1960819803
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_5": 2079771813
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_6": 1033281935
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_7": -1198852834
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_8": -1442812634
+      "PLAYER PIJAMA CAL\xC7A CIMA YOUTUBE_9": -546579307
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

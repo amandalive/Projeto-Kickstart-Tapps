@@ -20,7 +20,7 @@ public class UILoja : MonoBehaviour
 
     void AtualizarUI()
     {
-        textoMoedas.text = "Moedas: " + GerenciadorMoedas.Instancia.MoedasTotal;
+        textoMoedas.text = "Moedas: " + GerenciadorMoedas.ObterInstancia().MoedasTotal;
 
         for (int i = 0; i < skins.Length; i++)
         {
@@ -32,20 +32,20 @@ public class UILoja : MonoBehaviour
     {
         SkinItem item = skins[id];
 
-        if (GerenciadorLoja.Instancia.SkinComprada(id))
+        if (GerenciadorLoja.ObterInstancia().SkinComprada(id))
         {
-            GerenciadorLoja.Instancia.SelecionarSkin(id);
+            GerenciadorLoja.ObterInstancia().SelecionarSkin(id);
         }
         else
         {
-            bool sucesso = GerenciadorLoja.Instancia.ComprarSkin(id, item.preco);
+            bool sucesso = GerenciadorLoja.ObterInstancia().ComprarSkin(id, item.preco);
             if (!sucesso)
             {
                 Debug.Log("Moedas insuficientes!");
                 return;
             }
 
-            GerenciadorLoja.Instancia.SelecionarSkin(id);
+            GerenciadorLoja.ObterInstancia().SelecionarSkin(id);
         }
 
         AtualizarUI();
@@ -69,7 +69,7 @@ public class SkinItem
     public TMP_Text textoNome;
     public TMP_Text textoPreco;
     public Button botao;
-    public TMP_Text textoBotao;
+    public TMP_Text textoBotao;  
     public Image bordaSelecao;
 
     public void Atualizar(int id)
@@ -77,8 +77,8 @@ public class SkinItem
         imagemSkin.sprite = sprite;
         textoNome.text = nome;
 
-        bool comprada = GerenciadorLoja.Instancia.SkinComprada(id);
-        bool selecionada = GerenciadorLoja.Instancia.SkinSelecionada() == id;
+        bool comprada = GerenciadorLoja.ObterInstancia().SkinComprada(id);
+        bool selecionada = GerenciadorLoja.ObterInstancia().SkinSelecionada() == id;
 
         if (id == 0)
         {
@@ -91,8 +91,8 @@ public class SkinItem
         }
         else
         {
-            textoBotao.text = preco + "moedas";
-            textoPreco.text = preco + "moedas";
+            textoBotao.text = preco + " Moedas";
+            textoPreco.text = preco + " Moedas";
         }
         if (bordaSelecao != null) bordaSelecao.gameObject.SetActive(selecionada);
 

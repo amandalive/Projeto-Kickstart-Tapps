@@ -47,4 +47,15 @@ public class GerenciadorLoja : MonoBehaviour
         PlayerPrefs.Save();
         return true;
     }
+
+    public static GerenciadorLoja ObterInstancia()
+    {
+        if (Instancia == null)
+        {
+            GameObject go = new GameObject("GerenciadorLoja");
+            Instancia = go.AddComponent<GerenciadorLoja>();
+        }
+
+        return Instancia;
+    }
 }
