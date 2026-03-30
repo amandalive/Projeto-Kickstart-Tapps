@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class AplicadorSkin : MonoBehaviour
 {
-    public Sprite[] sprites;
-    private SpriteRenderer sr;
+    public RuntimeAnimatorController[] animatorControllers;
+
+    private Animator animator;
     
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        AplicarSkin();
+    }
 
-        int id = GerenciadorLoja.Instancia.SkinSelecionada();
+    void AplicarSkin()
+    {
+        int id = GerenciadorLoja.ObterInstancia().SkinSelecionada();
 
-        if (id < sprites.Length) sr.sprite = sprites[id];
+        if (id < animatorControllers.Length && animatorControllers[id] != null)
+                animator.runtimeAnimatorController = animatorControllers[id];
     }
 }

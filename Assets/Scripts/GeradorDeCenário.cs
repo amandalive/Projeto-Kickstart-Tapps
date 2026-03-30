@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class GeradorDeCenário : MonoBehaviour
 {
+    [Header("Referencia")]
     public Transform jogador;
-    public GameObject[] prefabConjuntos;  //a lista de conjuntos de obstáculos
+
+    [Header("Conjunto Inicial")]
+    public GameObject[] conjuntoInicial;
+
+    [Header("Conjuntos aleatorios por tempo")]
+    public FaixaTempo[] faixas;
+
+    [Header("Configuracoes")]
     public int conjuntosVisiveis = 4;    //quantos conjuntos ficam ativos por vez (refinar para otimização)
     public float distanciaCiclagem = 20f;  //distancia que o conjunto chega antes de ser retirado
 
     private List<Conjuntos> conjuntosAtivos = new List<Conjuntos>();
     private Queue<GameObject> pool = new Queue<GameObject>();
     private float proxPosX = 0f;
+    private int indiceConjuntoInicial = 0;
+    private float tempoDeJogo = 0f;    
     private int ultimoConjuntoIndex = -1;
 
 
@@ -20,14 +30,15 @@ public class GeradorDeCenário : MonoBehaviour
         
         for (int i = 0; i < conjuntosVisiveis; i++) {
 
-            SpawnarProximoConjunto();
-        
+            SpawnarProximoConjunto();        
         }
     }
 
 
     void Update()
     {
+        tempoDeJogo += Time.deltaTime;
+
         // Se o jogador está chegando perto do último conjunto, spawna mais
         if (conjuntosAtivos.Count > 0) { 
 
@@ -37,7 +48,6 @@ public class GeradorDeCenário : MonoBehaviour
             if (jogador.position.x + distanciaCiclagem > bordaDireita) {
 
                 SpawnarProximoConjunto();
-
             }
         }
 
@@ -57,9 +67,10 @@ public class GeradorDeCenário : MonoBehaviour
 
     void SpawnarProximoConjunto()
     {
-        GameObject prefab = EscolherConjuntoAleatorio();
-        GameObject obj = ObterDaPool(prefab);
+        GameObject prefab = EscolherPrefab();
+        if (prefab == null) return;
 
+        GameObject obj = ObterDaPool(prefab);
         obj.transform.position = new Vector3(proxPosX, 0f, 0f);
         obj.SetActive(true);
 
@@ -68,27 +79,39 @@ public class GeradorDeCenário : MonoBehaviour
         conjuntosAtivos.Add(conjunto);
     }
     
+    GameObject EscolherPrefab()
+    {
+        if (indiceConjuntoInicial < conjuntoInicial.Length)
+            return conjuntoInicial[indiceConjuntoInicial++];
+
+        FaixaTempo faixaAtual = null;
+
+        for(int i = faixas.Length -1; i >=0; i--)
+        {
+            if (tempoDeJogo >= faixas[i].tempoInicio)
+            {
+                faixaAtual = faixas[i];
+                break;
+            }
+        }
+
+        if (faixaAtual == null || faixaAtual.conjuntos.Length == 0) return null;
+
+        int index;
+        do
+        {
+            index = Random.Range(0, faixaAtual.conjuntos.Length);
+        } while (faixaAtual.conjuntos.Length > 1 && index == ultimoConjuntoIndex);
+
+        ultimoConjuntoIndex = index;
+        return faixaAtual.conjuntos[index];             
+    }
 
     void CiclagemConjunto(Conjuntos conjunto)
     {
         conjuntosAtivos.RemoveAt(0);
         conjunto.gameObject.SetActive(false);
         pool.Enqueue(conjunto.gameObject);
-    }
-
-    GameObject EscolherConjuntoAleatorio()
-    {
-        if (prefabConjuntos.Length == 1) return prefabConjuntos[0];
-
-        //garantir que o conjunto não se repita seguido
-        int index;
-        do
-        {
-            index = Random.Range(0, prefabConjuntos.Length);
-        } while (index == ultimoConjuntoIndex);
-
-        ultimoConjuntoIndex = index;
-        return prefabConjuntos[index];
     }
 
     GameObject ObterDaPool(GameObject prefab)
@@ -103,9 +126,12 @@ public class GeradorDeCenário : MonoBehaviour
         //senão, cria outro
         return Instantiate(prefab);
     }
+}
 
-
-
-
-
+[System.Serializable]
+public class FaixaTempo
+{
+    public string nome;
+    public float tempoInicio;
+    public GameObject[] conjuntos;
 }
